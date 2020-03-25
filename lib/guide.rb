@@ -52,7 +52,7 @@ class Guide
       puts 'Listing..'
     when 'find'
       puts 'Finding..'
-    when 'add '
+    when 'add'
       add
     when 'quit'
       return :quit
@@ -64,18 +64,7 @@ class Guide
   def add
     puts "\nAdd a restaurant\n\n ".upcase
 
-    args ={}
-
-    print "Restaurant name: "
-    args[:name].name = gets.chomp.strip
-
-    print "Cuisine type: "
-    args[:cuisine].cuisine = gets.chomp.strip
-
-    print "Avrage price: "
-    args[:price].price = gets.chomp.strip
-
-    restaurant = Restaurant.new
+    restaurant = Restaurant.build_using_questions
 
     if restaurant.save
       puts "\n Restaurant added\n\n"

@@ -14,6 +14,22 @@ class Restaurant
     @price    = args[:price]   || ""
   end
 
+  def self.build_using_questions
+
+    args ={}
+
+    print "Restaurant name: "
+    args[:name]= gets.chomp.strip
+
+    print "Cuisine type: "
+    args[:cuisine] = gets.chomp.strip
+
+    print "Avrage price: "
+    args[:price]= gets.chomp.strip
+
+    return self.new(args)
+  end
+
   def self.file_exists?
     # class should know if the restaurant file exists
     if @@filepath && File.exists?(@@filepath)
