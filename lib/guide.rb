@@ -32,8 +32,8 @@ class Guide
     conclusion
   end
 
-  def get_action
-    
+  
+
 
   def do_action(action)
     case action
