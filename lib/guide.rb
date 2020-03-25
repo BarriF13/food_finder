@@ -66,7 +66,7 @@ class Guide
 
     restaurants = Restaurant.saved_restaurants
     restaurants.each do |rest|
-      puts rest.name + " | "+ rest.cuisine + " | " + rest.price
+      puts rest.name + " | "+ rest.cuisine + " | " + rest.formatted_price
     end
   end
 

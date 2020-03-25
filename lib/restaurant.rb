@@ -1,4 +1,7 @@
+require_relative('./support/number_helper.rb')
 class Restaurant
+
+  include NumberHelper
   @@filepath = nil
   
   def self.filepath=(path=nil)
@@ -28,6 +31,10 @@ class Restaurant
     args[:price]= gets.chomp.strip
 
     return self.new(args)
+  end
+
+  def formatted_price
+    number_to_currency(@price)
   end
 
   def self.file_exists?
