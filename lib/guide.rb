@@ -1,9 +1,21 @@
+require_relative('./restaurant')
 class Guide
 
+
   def initialize(path=nil)
-  #locate the restaurant text file at path
-  # or creat a new file
-  #exit if create fails
+    #locate the restaurant text file at path
+    Restaurant.filepath = path
+      # or creat a new file
+      if Restaurant.file_exists?
+        puts "Found restaurant file."
+      elsif Restaurant.create_file
+        puts "restaurant file created."
+      else
+        #exit if create fails
+        puts "Exist ..\n\n"
+        exit!
+      end
+        
   end
 
   def launch

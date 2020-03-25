@@ -1,15 +1,9 @@
 #### Food Finder ####
 #
-#launch this Ruby file from command line
-#to get started.
-#
+
 APP_ROOT = File.dirname(__FILE__)
 
-#require "#{APP_ROOT}/lib/guide"
-#require FILE.join(APP_ROOT, 'lib', 'guide')
+require_relative('lib/guide')
 
-$:.unshift(File.join(APP_ROOT, 'lib'))
-require 'guide'
-
-guide = Guide.new('restaurant.txt')
-guide.launch
+guide = Guide.new('restaurants.txt')
+guide.launch!
