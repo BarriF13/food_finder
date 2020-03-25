@@ -6,13 +6,13 @@ class Guide
     #locate the restaurant text file at path
     Restaurant.filepath = path
       # or creat a new file
-      if Restaurant.file_exists?
+      if Restaurant.file_usable?
         puts "Found restaurant file."
       elsif Restaurant.create_file
         puts "restaurant file created."
       else
         #exit if create fails
-        puts "Exist ..\n\n"
+        puts "Exiting ..\n\n"
         exit!
       end
         
